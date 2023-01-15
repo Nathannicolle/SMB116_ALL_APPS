@@ -13,20 +13,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etContentURI"
-        app:layout_constrainedHeight="parent"
-        app:layout_constrainedWidth="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/tvContacts"
+        />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/etContentURI"
+        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/btnGet"
-        android:text="Get"/>
+        android:text="Get"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
