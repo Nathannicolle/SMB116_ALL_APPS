@@ -14,7 +14,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.List;
@@ -160,12 +159,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String uri = etContent.getText().toString();
-                URI uriContent = null;
+                Uri uriContent = null;
                 String content = "";
                 try {
                     uriContent = Uri.parse(uri);
                     content= getURIContent(uriContent);
-                } catch(URISyntaxException e) {
+                } catch(Exception e) {
                     e.printStackTrace();
                 }
 
@@ -174,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private String getURIContent(URI uri) {
+    private String getURIContent(Uri uri) {
         StringBuilder contacts = new StringBuilder();
         Cursor cursor = cp.query(uri, ContactHelper.ALL, null, null, null, null);
         StringBuilder txtContent = new StringBuilder();
@@ -190,6 +189,6 @@ public class MainActivity extends AppCompatActivity {
             contacts.append(tel);
         }
 
-        return ;
+        return "";
     }
 }
